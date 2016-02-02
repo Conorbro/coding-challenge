@@ -24,7 +24,7 @@ namespace :import do
           puts userTag.errors.full_messages if userTag.errors.any?
         end
       }
-    end
+      end
 
     puts "Data imported #{counter}"
   end

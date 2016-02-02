@@ -21,4 +21,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def import
+    User.import(params[:file])
+    redirect_to root_url, notice: "Activity Data Imported!"
+  end
+
 end

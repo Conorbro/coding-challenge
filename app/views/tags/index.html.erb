@@ -1,0 +1,15 @@
+<h1>Tags Table</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+  </tr>
+
+  <% @tags.each do |tag| %>
+    <tr>
+      <td><%= tag.id %></td>
+      <td><%= tag.name %></td>
+    </tr>
+  <% end %>
+</table>

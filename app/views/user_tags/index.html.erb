@@ -1,0 +1,17 @@
+<h1>User Tag Association Table</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Tag Id</th>
+    <th>User Id</th>
+  </tr>
+
+  <% @userTags.each do |userTag| %>
+    <tr>
+      <td><%= userTag.id %></td>
+      <td><%= userTag.tag_id %></td>
+      <td><%= userTag.user_id %></td>
+    </tr>
+  <% end %>
+</table>

@@ -7,20 +7,21 @@ class User < ActiveRecord::Base
                     length: {minimum: 5}
 
   def self.import(file)
-    counter = 0
     CSV.foreach(file.path) do |row|
-      print row
       name = row[0]
       email = row[1]
 
       user = User.create(name: name, email: email)
       puts user.errors.full_messages if user.errors.any?
-      counter += 1 if user.persisted?
 
       row.each { |tags|
         unless row.index(tags) == 0 || row.index(tags) == 1
           tag = Tag.create(name: tags)
-          puts tag.id
+          # if tag.id is black then query model for the id of that tag
+          # Get id of row from Tag
+          if(tag.id == nil)
+            tag = Tag.where(:name => tags).first
+          end
           userTag = UserTag.create(tag_id: tag.id, user_id: user.id)
           puts userTag.errors.full_messages if userTag.errors.any?
         end

@@ -1,28 +1,24 @@
-== README
+== Unituition Coding Challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version: 2.0.0p645
 
-Things you may want to cover:
+* To run locally:
+  ** cd into /unituition-master
+  ** $ rails/bin server
 
-* Ruby version
+* Data file: data.csv
+  ** Uses header 'Name', 'Email', 'Tags'
+  ** Contains some bogus data to test robustness of app (missing names, emails, tags etc.)
 
-* System dependencies
+All constraints match the requirements set out by the challenge (No duplicates in the tags table, db schema etc.)
 
-* Configuration
+I added in some additional validation to ensure duplicate users were not created as I thought it wouldn't make sense for multiple users to share the same email address.
+This can easily be reverted by removing 'validates :email, uniqueness: true' from the user model.
+Other validation was added to ensure certain field weren't left blank, were too short etc.
 
-* Database creation
+I believe there may have been a small error in the challenge guidelines in the example given of what the UserTag table should look like following the entry of the example data:
 
-* Database initialization
+Name, Email, Tags
+Uni Tuition, tutor@unituition.com, tutoring, example
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Both entries in the UserTag table possess the same id which should be unique

@@ -3,7 +3,7 @@
 <h4>Import Data</h4>
   <%= form_tag import_users_path, multipart: true do %>
     <%= file_field_tag :file %>
-    <%= submit_tag "Import CSV" %>
+    <%= submit_tag "Import CSV", :disable_with => "Please Wait..."  %>
   <% end %>
 
 <table>
@@ -22,3 +22,6 @@
     </tr>
   <% end %>
 </table>
+<br>
+<p><a href="http://localhost:3000/tags">Tags Table</a></p>
+<p><a href="http://localhost:3000/user_tags">User Tag Association Table</a></p>

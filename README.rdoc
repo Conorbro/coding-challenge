@@ -3,7 +3,8 @@
 * Ruby version: 2.0.0p645
 
 * To run locally:
-  ** cd into /unituition-master
+  ** cd into /coding-challenge-master
+  ** $ bundle install
   ** $ rails/bin server
 
 * Data file: data.csv
@@ -22,3 +23,6 @@ Name, Email, Tags
 Uni Tuition, tutor@unituition.com, tutoring, example
 
 Both entries in the UserTag table possess the same id which should be unique
+
+* Future work
+** Having had more time I would have added full CRUD capabilities to allow for updating previously imported data and deleting as well as styling to make the app look better.

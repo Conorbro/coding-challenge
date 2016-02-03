@@ -1,28 +1,35 @@
-== Unituition Coding Challenge
+= Unituition Coding Challenge
 
 * Ruby version: 2.0.0p645
 
-* To run locally:
-  ** cd into /coding-challenge-master
-  ** $ bundle install
-  ** $ rails/bin server
+== Heroku
+* Application is deployed on Heroku if you do not wish to deploy locally
+* https://murmuring-wave-14438.herokuapp.com/
 
-* Data file: data.csv
-  ** Uses header 'Name', 'Email', 'Tags'
-  ** Contains some bogus data to test robustness of app (missing names, emails, tags etc.)
+== To run locally:
+  * cd into /coding-challenge-master
+  * $ bundle install
+  * $ bin/rake db:migrate
+  * $ rails/bin server
 
-All constraints match the requirements set out by the challenge (No duplicates in the tags table, db schema etc.)
+== Data file:
+  * data.csv
+  * Uses header 'Name', 'Email', 'Tags'
+  * Contains some bogus data to test robustness of app (missing names, emails, tags etc.)
 
-I added in some additional validation to ensure duplicate users were not created as I thought it wouldn't make sense for multiple users to share the same email address.
+== Notes
+* All constraints match the requirements set out by the challenge (No duplicates in the tags table, db schema etc.)
+
+* I added in some additional validation to ensure duplicate users were not created as I thought it wouldn't make sense for multiple users to share the same email address.
 This can easily be reverted by removing 'validates :email, uniqueness: true' from the user model.
 Other validation was added to ensure certain field weren't left blank, were too short etc.
 
-I believe there may have been a small error in the challenge guidelines in the example given of what the UserTag table should look like following the entry of the example data:
+* I believe there may have been a small error in the challenge guidelines in the example given of what the UserTag table should look like following the entry of the example data:
 
 Name, Email, Tags
 Uni Tuition, tutor@unituition.com, tutoring, example
 
 Both entries in the UserTag table possess the same id which should be unique
 
-* Future work
-** Having had more time I would have added full CRUD capabilities to allow for updating previously imported data and deleting as well as styling to make the app look better.
+== Future work
+* Having had more time I would have added full CRUD capabilities to allow for updating previously imported data and deleting as well as styling to make the app look better.
